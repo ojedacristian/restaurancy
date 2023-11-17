@@ -60,6 +60,15 @@ const api = {
 
     return restaurant;
   },
+  search: async function (query = ""): Promise<Restaurant[]> {
+    const results = await api.list().then((restaurants) => {
+      return restaurants.filter((restaurant) =>
+        restaurant.name.toLowerCase().includes(query.toLowerCase()),
+      );
+    });
+
+    return results;
+  },
 };
 
 export default api;

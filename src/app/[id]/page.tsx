@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import api from "@/api";
-import RestaurantCard from "@/app/components/RestaurantCard";
+import RestaurantCard from "@/app/(index)/components/RestaurantCard";
 
 export async function generateMetadata({params: {id}}: {params: {id: string}}) {
   const restaurant = await api.fetch(id);
