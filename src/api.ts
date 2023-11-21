@@ -1,12 +1,4 @@
-export interface Restaurant {
-  id: string;
-  name: string;
-  image: string;
-  description: string;
-  address: string;
-  score: number;
-  ratings: number;
-}
+import type {Restaurant} from "./types";
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const url =

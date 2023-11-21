@@ -1,11 +1,11 @@
-import {redirect} from "next/navigation";
+import type {Restaurant} from "@/types";
 
 import api from "@/api";
-import RestaurantCard from "@/app/(index)/components/RestaurantCard";
+import {RestaurantCard} from "@/app/(index)/components/restaurantCard/";
 import SearchAction from "@/app/(index)/components/SearchAction";
 
 export default async function HomePage({searchParams}: {searchParams: {q: string}}) {
-  const restaurants = await api.search(searchParams.q);
+  const restaurants: Restaurant[] = await api.search(searchParams.q);
 
   return (
     <section>
